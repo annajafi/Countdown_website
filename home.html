@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body id="formDisplay">
+    <div class="form-card">
+        <div class="form-header">
+            <h1>Event Registration</h1>
+            <p>Register with us to get more details.</p>
+        </div>
+
+        <form action="/submit-form-data" method="post" class="styled-form">
+            <div class="form-group">
+                <label for="countdownName">Name</label>
+                <input type="text" id="countdownName" name="countdown_name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="countdownDate">Date</label>
+                    <input type="date" id="countdownDate" name="countdown_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="countdownTime">Time</label>
+                    <input type="time" id="countdownTime" name="countdown_time" required>
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <label for="weekdaysOnly">Weekdays Only</label>
+                <input type="checkbox" id="weekdaysOnly" name="weekdays_only" value="yes">
+            </div>
+
+            <button type="submit" class="submit-btn">Send Data</button>
+        </form>
+    </div>
+</body>
+</html>

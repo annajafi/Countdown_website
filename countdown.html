@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class = "divSize">
+
+        <div class = "temp"  id = "counters">
+            <div class="temp" id="counters">
+                {% for count in counters %}
+                    <p>
+                        {{ count.name }} - {{ count.date }} {{ count.time }}
+                        {% if count.weekdays_only %}(Weekdays only){% endif %}
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class = "temp" id = "main_class">
+
+            <div class = "displayCount" >
+                <input type="checkbox" id="yes" name="yes">
+                <label for="yes">Yes</label>
+                <input type="checkbox" id="no" name="no">
+                <label for="no">No</label>
+                <h2
+                    id="output"
+                    data-date="{{ main_countdown.date if main_countdown else '' }}"
+                    data-time="{{ main_countdown.time if main_countdown else '' }}"
+                    data-name="{{ main_countdown.name if main_countdown else '' }}"
+                    data-weekdays="{{ 'true' if main_countdown and main_countdown.weekdays_only else 'false' }}"
+                >
+                    No countdown yet
+                </h2>
+            </div>
+
+            <div id="bottom" >
+                <div id="ButtonDisplay">
+                    <button type="button" id="bgButton" class="displayBtn">
+                        Edit Background
+                    </button>
+                    <input type="file" id="bgFile" accept="image/*" style="display: none;">
+                </div>  
+                <div id = "addBtn" >
+                    <a href="{{ url_for('home') }}">
+                        <button type="button" id="addCountdownBtn" class="displayBtn">
+                            Add Countdown
+                        </button>
+                    </a>
+
+                </div>  
+                <div id = "switchBtn" >
+                    <button type="button" id="switchCountdownBtn" class="displayBtn">
+                        Switch Countdown
+                    </button>
+                </div>  
+            </div>
+
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
