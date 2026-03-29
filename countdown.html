@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class = "divSize">
+    <div class = "divSize" >
 
-        <div class = "temp"  id = "counters">
+        <div class = "temp" style="background-color: blue;">
             <div class="temp" id="counters">
                 {% for count in counters %}
                     <p>
@@ -20,32 +20,30 @@
             </div>
         </div>
 
-        <div class = "temp" id = "main_class">
+        <div class = "temp" id = "main_class" style="background-color: pink;">
 
-            <div class = "displayCount" >
-                <input type="checkbox" id="yes" name="yes">
-                <label for="yes">Yes</label>
-                <input type="checkbox" id="no" name="no">
-                <label for="no">No</label>
+            <div class = "displayCount" style="background-color: brown;" >
                 <h2
                     id="output"
+                    data-name="{{ main_countdown.name if main_countdown else '' }}"
                     data-date="{{ main_countdown.date if main_countdown else '' }}"
                     data-time="{{ main_countdown.time if main_countdown else '' }}"
-                    data-name="{{ main_countdown.name if main_countdown else '' }}"
                     data-weekdays="{{ 'true' if main_countdown and main_countdown.weekdays_only else 'false' }}"
                 >
                     No countdown yet
                 </h2>
             </div>
 
-            <div id="bottom" >
-                <div id="ButtonDisplay">
-                    <button type="button" id="bgButton" class="displayBtn">
+            <div id="bottom" style="background-color: teal;">
+
+                <div id="ButtonDisplay"  style="background-color: red;">
+                    <button type="button" class="displayBtn">
                         Edit Background
                     </button>
-                    <input type="file" id="bgFile" accept="image/*" style="display: none;">
+                    <input type="file" id="bgFile" accept="image/*">
                 </div>  
-                <div id = "addBtn" >
+
+                <div id = "addBtn" style="background-color: orange;">
                     <a href="{{ url_for('home') }}">
                         <button type="button" id="addCountdownBtn" class="displayBtn">
                             Add Countdown
@@ -53,9 +51,14 @@
                     </a>
 
                 </div>  
-                <div id = "switchBtn" >
+                <div id = "switchBtn" style="background-color: purple;">
                     <button type="button" id="switchCountdownBtn" class="displayBtn">
                         Switch Countdown
+                    </button>
+                </div>  
+                <div id = "weekdaysBtn" style="background-color: yellow;">
+                    <button type="button" id="weekdaysCountdownBtn" class="displayBtn">
+                        Weekdays Only
                     </button>
                 </div>  
             </div>

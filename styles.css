@@ -125,6 +125,15 @@ input[type="time"] {
     padding-bottom: 14px;
 }
 
+.displayCount{
+    position:absolute;
+    left: 40vw;
+    top: 35vh;
+    font-size: 5vh;
+    font-family: 'Playfair Display', serif;
+
+    
+}
 .checkbox-group input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -147,6 +156,23 @@ input[type="time"] {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
+#addBtn{
+    position: absolute; 
+    bottom: 20px; 
+    right: 55vw; 
+}
+
+#switchBtn{
+    position: absolute; 
+    bottom: 20px; 
+    right: 44vw; 
+}
+
+#weekdaysBtn{
+    position: absolute; 
+    bottom: 20px; 
+    right: 34vw; 
+}
 .submit-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(92, 63, 210, 0.28);
@@ -184,6 +210,7 @@ body {
 .temp { 
     min-height: 100vh; 
     padding: 0; 
+
 } 
 
 .displayBtn { 
@@ -193,6 +220,9 @@ body {
     color: black; 
     padding: 10px 20px; 
     cursor: pointer; 
+    font-family: 'Playfair Display', serif;
+
+
 } 
 
 #bgFile { 
@@ -212,6 +242,7 @@ body {
 #bottom { 
     margin-top: auto; 
     width: 100%; 
+    display: flex;
 } 
 
 #ButtonDisplay { 
